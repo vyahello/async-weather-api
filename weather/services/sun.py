@@ -21,4 +21,3 @@ def today(latitude: float, longitude: float) -> dict:
             continue
         sun_data[key] = datetime.datetime.strftime(_utc_to_local(value), "%I:%M:%S %p")
     return sun_data
-
