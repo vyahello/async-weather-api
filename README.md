@@ -47,6 +47,7 @@ To be able to run code analysis, please execute command below:
 ```bash
 ➜ ./analyse-code.sh
 ```
+Also `test-report.html` will be generated after unittests execution.
 
 ### Release notes
 
