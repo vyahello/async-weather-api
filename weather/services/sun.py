@@ -1,5 +1,6 @@
 import datetime
 import time
+from typing import Dict
 import requests
 
 
@@ -11,7 +12,7 @@ def _utc_to_local(date: str) -> datetime.datetime:
     )
 
 
-def today(latitude: float, longitude: float) -> dict:
+def today(latitude: float, longitude: float) -> Dict[str, str]:
     """Returns sunrise/sunset for today."""
     response = requests.get(f"https://api.sunrise-sunset.org/json?lat={latitude}&lng={longitude}")
     response.raise_for_status()

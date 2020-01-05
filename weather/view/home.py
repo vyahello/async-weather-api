@@ -4,6 +4,7 @@ blueprint: flask.blueprints.Blueprint = flask.blueprints.Blueprint(__name__, __n
 
 
 @blueprint.route("/")
+@blueprint.route("/index")
 def index() -> str:
     """Returns home page route."""
     return flask.render_template("index.html")

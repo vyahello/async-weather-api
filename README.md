@@ -36,6 +36,40 @@ Please run following script from the root directory of a project:
 ➜ python weather.py
 ```
 
+### Endpoints
+- **/** - home page
+  ```bash
+  ➜  curl -X GET http://0.0.0.0:5001/ 
+  ➜  curl -X GET http://0.0.0.0:5001/index 
+  ```
+  **Response**: html page
+- **/api/weather/{city}/{state}/{country}** - current weather event
+    ```bash
+  ➜  curl -X GET http://0.0.0.0:5001/api/events/London/GB/GreatBritain
+  ```
+  **Response**: json object
+  ```json
+  {"city":"London","country":"GreatBritain","name":"Jeff the player","state":"GB"}
+  ```
+- **/api/weather/{zip_code}/{country}** - current weather in city
+  ```bash
+  ➜  curl -X GET http://0.0.0.0:5001/api/weather/97002/us
+  ```
+  **Response**: json object
+  ```json
+  {"base":"stations","clouds":{"all":90},"cod":200,"coord":{"lat":45.23,"lon":-122.8},
+  ...}
+  ```
+- **/api/sun/{zip_code}/{country}** - current sunset/sunrise in city
+  ```bash
+  ➜  curl -X GET http://0.0.0.0:5001/sun/weather/97002/us
+  ```
+  **Response**: json object
+  ```json
+  {"astronomical_twilight_begin":"04:03:49 PM","astronomical_twilight_end":"04:29:50 AM",
+  ...}
+  ```
+
 ## Development notes
 
 ### CI 
@@ -51,6 +85,8 @@ Also `test-report.html` will be generated after unittests execution.
 
 ### Release notes
 
+* 0.2.0
+  * Introduce synchronous approach
 * 0.1.0
   * Distribute initial project version
 
