@@ -1,0 +1,6 @@
+[pydocstyle]
+ignore = D203, # 1 blank line required before class docstring
+         D213, # Multi-line docstring summary should start at the second line
+         D401, # First line should be in imperative mood. According to https://github.com/google/styleguide/blob/gh-pages/pyguide.md this rule is disabled.
+         D104, # Missing docstring in public package
+         D107, # Missing docstring in __init__
