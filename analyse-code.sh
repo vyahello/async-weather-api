@@ -34,7 +34,7 @@ check-mypy() {
 
 
 check-pydocstyle() {
-    --check-box "pydocstyle" && ( pydocstyle --explain --count *.py ./ )
+    --check-box "pydocstyle" && ( pydocstyle --explain --count ./ )
 }
 
 
