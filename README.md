@@ -106,6 +106,8 @@ Other than that, a fresh versioned package will be delivered on PYPI after new t
 
 ### Release notes
 
+* 0.4.2 
+  * Add manifest package installer file
 * 0.4.1
   * Read requirements for PYPI build
 * 0.4.0

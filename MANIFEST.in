@@ -1,0 +1,4 @@
+include weather/schema.sql
+graft weather/static
+graft weather/templates
+global-exclude *.pyc

@@ -16,7 +16,7 @@ def _requirements() -> Sequence[str]:
 
 setup(
     name="async-weather-api",
-    version="0.4.1",
+    version="0.4.2",
     author="Volodymyr Yahello",
     author_email="vyahello@gmail.com",
     description=(
