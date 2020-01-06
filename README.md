@@ -12,6 +12,8 @@
 
 [![PyPI version shields.io](https://img.shields.io/pypi/v/async-weather-api.svg)](https://pypi.python.org/pypi/async-weather-api/)
 [![PyPI pyversions](https://img.shields.io/pypi/pyversions/async-weather-api.svg)](https://pypi.python.org/pypi/async-weather-api/)
+
+[![Docker pulls](https://img.shields.io/docker/pulls/vyahello/async-weather-api.svg)](https://hub.docker.com/repository/docker/vyahello/async-weather-api)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE.md)
 
 # Async weather API
@@ -31,6 +33,9 @@
   - [pydocstyle](http://www.pydocstyle.org/)
 
 ## Usage
+
+### PYPI
+
 Please run following script to obtain latest package from PYPI:
 ```bash
 ➜ pip install async-weather-api
@@ -45,6 +50,22 @@ Running on https://0.0.0.0:5001 (CTRL + C to quit)
 ...
 ```
 > Note `key` stands for API key from https://openweathermap.org
+
+### Docker image
+
+Please run next command to start async weather api via docker:
+```bash
+docker run -it -p 3000:5001 vyahello/async-weather-api:0.5.0 weather run --bind 0.0.0.0:5001 --mode prod --key <secret-key>
+```
+
+### Source code
+
+To be able to run source code please execute command below:
+```bash
+➜ python -m weather run --bind 0.0.0.0:5001 --mode prod --key your-secret-key
+Running on https://0.0.0.0:5001 (CTRL + C to quit)
+...
+```
 
 ### Endpoints
 - **/** - home page
@@ -82,15 +103,6 @@ Running on https://0.0.0.0:5001 (CTRL + C to quit)
 
 ## Development notes
 
-### Run from source code
-
-To be able to run source code please execute command below:
-```bash
-➜ python -m weather run --bind 0.0.0.0:5001 --mode prod --key your-secret-key
-Running on https://0.0.0.0:5001 (CTRL + C to quit)
-...
-```
-
 ### CI/CD
 
 Project has Travis CI integration using [.travis.yml](.travis.yml) file thus code analysis (`black`, `mypy`, `pydocstyle`, `pylint`, `flake8`) and unittests (`pytest`) will be run automatically
@@ -106,6 +118,8 @@ Other than that, a fresh versioned package will be delivered on PYPI after new t
 
 ### Release notes
 
+* 0.5.0
+  * Add official docker image
 * 0.4.2 
   * Add manifest package installer file
 * 0.4.1

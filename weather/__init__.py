@@ -2,7 +2,7 @@ from quart import Quart
 from weather.services.weather import global_init
 from weather.view import home, city
 
-__version__: str = "0.4.2"
+__version__: str = "0.5.2"
 __author__: str = "Volodymyr Yahello"
 
 application: Quart = Quart(__name__)

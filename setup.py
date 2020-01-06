@@ -16,11 +16,11 @@ def _requirements() -> Sequence[str]:
 
 setup(
     name="async-weather-api",
-    version="0.4.2",
+    version="0.5.0",
     author="Volodymyr Yahello",
     author_email="vyahello@gmail.com",
     description=(
-        "This project represents sample of asynchronous weather REST API that is build using **quart** "
+        "This project represents sample of asynchronous weather REST API that is build using quart "
         "(flask compatible API) python web microframework based on Asyncio"
     ),
     long_description=_description(),
