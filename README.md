@@ -20,7 +20,6 @@
 ## Tools
 - python 3.6 | 3.7 | 3.8
 - [asyncio](https://docs.python.org/3/library/asyncio.html)
-- [flask](http://flask.palletsprojects.com/)
 - [quart](https://pgjones.gitlab.io/quart/)
 - code analysis
   - [pytest](https://pypi.org/project/pytest/)

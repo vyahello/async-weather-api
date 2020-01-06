@@ -1,5 +1,5 @@
 from typing import Dict, Any
-import requests
+import aiohttp
 
 _KEY: str = ""
 
@@ -16,9 +16,10 @@ def global_init(api_key: str) -> None:
         print()
 
 
-def now(zip_code: str, country_code: str) -> Dict[str, Any]:
+async def now(zip_code: str, country_code: str) -> Dict[str, Any]:
     """Obtains weather using zip and country codes."""
     url: str = f"https://api.openweathermap.org/data/2.5/weather?zip={zip_code},{country_code}&appid={_KEY}"
-    response = requests.get(url)
-    response.raise_for_status()
-    return response.json()
+    async with aiohttp.ClientSession() as session:
+        async with session.get(url) as response:
+            response.raise_for_status()
+            return await response.json()

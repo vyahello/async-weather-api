@@ -1,16 +1,16 @@
-import flask
+import quart
 
-blueprint: flask.blueprints.Blueprint = flask.blueprints.Blueprint(__name__, __name__)
+blueprint: quart.blueprints.Blueprint = quart.blueprints.Blueprint(__name__, __name__)
 
 
 @blueprint.route("/")
 @blueprint.route("/index")
-def index() -> str:
+async def index() -> str:
     """Returns home page route."""
-    return flask.render_template("index.html")
+    return await quart.render_template("index.html")
 
 
 @blueprint.errorhandler(404)
-def not_found() -> flask.Response:
+async def not_found() -> quart.Response:
     """Returns page not found."""
-    return flask.Response("The page was not found", status=404)
+    return quart.Response("The page was not found", status=404)

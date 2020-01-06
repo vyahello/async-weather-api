@@ -1,11 +1,17 @@
 from typing import Sequence, Dict, Any
-import requests
+import aiohttp
 
 
-def lat_long(zip_code: str, country: str) -> Sequence[float]:
+async def lat_long(zip_code: str, country: str) -> Sequence[float]:
     """Returns latitude and longitude."""
     key: str = f"{zip_code}, {country}"
-    response = requests.get(f'http://www.datasciencetoolkit.org/street2coordinates/{key.replace(" ", "+")}')
-    response.raise_for_status()
-    city: Dict[str, Any] = response.json().get(f"{zip_code}, {country}", dict())
+
+    async with aiohttp.ClientSession() as session:
+        async with session.get(
+            f'http://www.datasciencetoolkit.org/street2coordinates/{key.replace(" ", "+")}'
+        ) as response:
+            response.raise_for_status()
+            data = await response.json()
+
+    city: Dict[str, Any] = data.get(f"{zip_code}, {country}", dict())
     return city.get("latitude", 0.00), city.get("longitude", 0.00)

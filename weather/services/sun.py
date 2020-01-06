@@ -1,7 +1,7 @@
 import datetime
 import time
 from typing import Dict
-import requests
+import aiohttp
 
 
 def _utc_to_local(date: str) -> datetime.datetime:
@@ -12,11 +12,14 @@ def _utc_to_local(date: str) -> datetime.datetime:
     )
 
 
-def today(latitude: float, longitude: float) -> Dict[str, str]:
+async def today(latitude: float, longitude: float) -> Dict[str, str]:
     """Returns sunrise/sunset for today."""
-    response = requests.get(f"https://api.sunrise-sunset.org/json?lat={latitude}&lng={longitude}")
-    response.raise_for_status()
-    sun_data = response.json().get("results", {})
+    async with aiohttp.ClientSession() as session:
+        async with session.get(f"https://api.sunrise-sunset.org/json?lat={latitude}&lng={longitude}") as response:
+            response.raise_for_status()
+            data = await response.json()
+
+    sun_data = data.get("results", {})
     for key, value in tuple(sun_data.items()):  # type: str, str
         if "AM" not in value and "PM" not in value:
             continue

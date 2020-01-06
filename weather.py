@@ -1,12 +1,12 @@
 """Main weather application api entrypoint."""
 from typing import Dict, Any
-from flask import Flask
+from quart import Quart
 from weather.config import settings
 from weather.services.weather import global_init
 from weather.view import home, city
 
 _is_debug: bool = False
-_application: Flask = Flask(__name__)
+_application: Quart = Quart(__name__)
 
 _application.register_blueprint(home.blueprint)
 _application.register_blueprint(city.blueprint)
@@ -26,3 +26,6 @@ def _run_weather() -> None:
 
 if __name__ == "__main__":
     _run_weather()
+
+
+# 7742ccb67df87111cbec7785057277f0

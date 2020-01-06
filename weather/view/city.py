@@ -1,12 +1,12 @@
 from typing import Dict, Any
-import flask
+import quart
 from weather.services import sun, location, weather
 
-blueprint: flask.blueprints.Blueprint = flask.blueprints.Blueprint(__name__, __name__)
+blueprint: quart.blueprints.Blueprint = quart.blueprints.Blueprint(__name__, __name__)
 
 
-@blueprint.route("/api/events/<city>/<state>/<country>", methods=("GET",))
-def events(city: str, state: str, country: str) -> Dict[str, Any]:
+@blueprint.route("/api/events/<city>/<state>/<country>", methods=["GET"])
+async def events(city: str, state: str, country: str) -> quart.Response:
     """Returns current weather event."""
     player = {
         "name": "Jeff the player",
@@ -15,24 +15,24 @@ def events(city: str, state: str, country: str) -> Dict[str, Any]:
         "country": country,
     }
     if not player:
-        flask.abort(404)
-    return flask.jsonify(player)
+        quart.abort(404)
+    return quart.jsonify(player)
 
 
-@blueprint.route("/api/weather/<zip_code>/<country>", methods=("GET",))
-def weather_(zip_code: str, country: str) -> Dict[str, Any]:
+@blueprint.route("/api/weather/<zip_code>/<country>", methods=["GET"])
+async def weather_(zip_code: str, country: str) -> quart.Response:
     """Returns current weather."""
-    data: Dict[str, Any] = weather.now(zip_code, country)
+    data: Dict[str, Any] = await weather.now(zip_code, country)
     if not data:
-        flask.abort(404)
-    return flask.jsonify(data)
+        quart.abort(404)
+    return quart.jsonify(data)
 
 
-@blueprint.route("/api/sun/<zip_code>/<country>", methods=("GET",))
-def sun_(zip_code: str, country: str) -> Dict[str, Any]:
+@blueprint.route("/api/sun/<zip_code>/<country>", methods=["GET"])
+async def sun_(zip_code: str, country: str) -> quart.Response:
     """Returns current sunrise/sunset."""
-    lat, long = location.lat_long(zip_code, country)
-    data: Dict[str, Any] = sun.today(lat, long)
+    lat, long = await location.lat_long(zip_code, country)
+    data: Dict[str, Any] = await sun.today(lat, long)
     if not data:
-        flask.abort(404)
-    return flask.jsonify(data)
+        quart.abort(404)
+    return quart.jsonify(data)
