@@ -1,18 +1,16 @@
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-[![GitHub version](https://badge.fury.io/gh/vyahello%2Fasync-weather-api.svg)](https://github.com/vyahello/async-weather-api/releases)
+[![Checked with mypy](http://www.mypy-lang.org/static/mypy_badge.svg)](http://mypy-lang.org/)
+[![PyPI version shields.io](https://img.shields.io/pypi/v/async-weather-api.svg)](https://pypi.python.org/pypi/async-weather-api/)
+[![PyPI pyversions](https://img.shields.io/pypi/pyversions/async-weather-api.svg)](https://pypi.python.org/pypi/async-weather-api/)
+
 [![Build Status](https://travis-ci.org/vyahello/async-weather-api.svg?branch=master)](https://travis-ci.org/vyahello/async-weather-api)
 [![Coverage Status](https://coveralls.io/repos/github/vyahello/async-weather-api/badge.svg?branch=master)](https://coveralls.io/github/vyahello/async-weather-api?branch=master)
-
 [![Forks](https://img.shields.io/github/forks/vyahello/async-weather-api)](https://github.com/vyahello/async-weather-api/network/members)
 [![Stars](https://img.shields.io/github/stars/vyahello/async-weather-api)](https://github.com/vyahello/async-weather-api/stargazers)
 [![Issues](https://img.shields.io/github/issues/vyahello/async-weather-api)](https://github.com/vyahello/async-weather-api/issues)
 [![GitHub watchers](https://img.shields.io/github/watchers/vyahello/async-weather-api.svg)](https://GitHub.com/vyahello/async-weather-api/graphs/watchers/)
 [![GitHub contributors](https://img.shields.io/github/contributors/vyahello/async-weather-api.svg)](https://GitHub.com/vyahello/async-weather-api/graphs/contributors/)
-
-[![PyPI version shields.io](https://img.shields.io/pypi/v/async-weather-api.svg)](https://pypi.python.org/pypi/async-weather-api/)
-[![PyPI pyversions](https://img.shields.io/pypi/pyversions/async-weather-api.svg)](https://pypi.python.org/pypi/async-weather-api/)
-
 [![Docker pulls](https://img.shields.io/docker/pulls/vyahello/async-weather-api.svg)](https://hub.docker.com/repository/docker/vyahello/async-weather-api)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE.md)
 

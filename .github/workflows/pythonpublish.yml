@@ -1,6 +1,8 @@
 name: Publish async-weather-api 🐍 distributions 📦 to PyPI
 
-on: push
+on:
+  release:
+    types: [created]
 
 jobs:
   deploy:
