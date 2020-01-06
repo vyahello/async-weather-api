@@ -24,3 +24,8 @@ venv
 # pytest
 assets/
 test-report.html
+
+# pypi assets
+dist/
+build/
+*.egg-info

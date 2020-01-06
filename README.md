@@ -10,7 +10,8 @@
 [![GitHub watchers](https://img.shields.io/github/watchers/vyahello/async-weather-api.svg)](https://GitHub.com/vyahello/async-weather-api/graphs/watchers/)
 [![GitHub contributors](https://img.shields.io/github/contributors/vyahello/async-weather-api.svg)](https://GitHub.com/vyahello/async-weather-api/graphs/contributors/)
 
-
+[![PyPI version shields.io](https://img.shields.io/pypi/v/async-weather-api.svg)](https://pypi.python.org/pypi/async-weather-api/)
+[![PyPI pyversions](https://img.shields.io/pypi/pyversions/async-weather-api.svg)](https://pypi.python.org/pypi/async-weather-api/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE.md)
 
 # Async weather API
@@ -30,10 +31,20 @@
   - [pydocstyle](http://www.pydocstyle.org/)
 
 ## Usage
-Please run following script from the root directory of a project:
+Please run following script to obtain latest package from PYPI:
 ```bash
-➜ python weather.py
+➜ pip install async-weather-api
 ```
+
+Then please execute instructions below to launch game from your environment:
+```python
+import weather
+
+weather.run(key="your-secret-key", bind="0.0.0.0:5001", debug=False)
+Running on https://0.0.0.0:5001 (CTRL + C to quit)
+...
+```
+> Note `key` stands for API key from https://openweathermap.org
 
 ### Endpoints
 - **/** - home page
@@ -71,6 +82,15 @@ Please run following script from the root directory of a project:
 
 ## Development notes
 
+### Run from source code
+
+To be able to run source code please execute command below:
+```bash
+➜ python -m weather run --bind 0.0.0.0:5001 --mode prod --key your-secret-key
+Running on https://0.0.0.0:5001 (CTRL + C to quit)
+...
+```
+
 ### CI 
 
 Project has Travis CI integration using [.travis.yml](.travis.yml) file thus code analysis (`black`, `mypy`, `pydocstyle`, `pylint`, `flake8`) and unittests (`pytest`) will be run automatically
@@ -84,6 +104,10 @@ Also `test-report.html` will be generated after unittests execution.
 
 ### Release notes
 
+* 0.4.0
+  * Introduce PYPI package
+* 0.3.0
+  * Introduce asynchronous approach
 * 0.2.0
   * Introduce synchronous approach
 * 0.1.0
