@@ -91,7 +91,7 @@ Running on https://0.0.0.0:5001 (CTRL + C to quit)
 ...
 ```
 
-### CI 
+### CI/CD
 
 Project has Travis CI integration using [.travis.yml](.travis.yml) file thus code analysis (`black`, `mypy`, `pydocstyle`, `pylint`, `flake8`) and unittests (`pytest`) will be run automatically
 after every made change to the repository.
@@ -101,6 +101,8 @@ To be able to run code analysis, please execute command below:
 ➜ ./analyse-code.sh
 ```
 Also `test-report.html` will be generated after unittests execution.
+
+Other than that, a fresh versioned package will be delivered on PYPI after new tag is created using [pythonpublish.yml](.github/workflows/pythonpublish.yml) file.
 
 ### Release notes
 
