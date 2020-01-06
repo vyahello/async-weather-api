@@ -1,4 +1,4 @@
-from typing import IO
+from typing import IO, Sequence
 from setuptools import setup, find_packages
 
 
@@ -8,9 +8,15 @@ def _description() -> str:
         return readme.read()
 
 
+def _requirements() -> Sequence[str]:
+    """Returns requirements sequence."""
+    with open("requirements.txt", "r") as requirements:  # type: IO
+        return tuple(map(str.strip, requirements.readlines()))
+
+
 setup(
     name="async-weather-api",
-    version="0.4.0",
+    version="0.4.1",
     author="Volodymyr Yahello",
     author_email="vyahello@gmail.com",
     description=(
@@ -19,14 +25,16 @@ setup(
     ),
     long_description=_description(),
     long_description_content_type="text/markdown",
-    url="https://github.com/vyahello/christmas-tree",
+    url="https://github.com/vyahello/async-weather-api",
     packages=find_packages(),
-    classifiers=[
+    include_package_data=True,
+    install_requires=_requirements(),
+    classifiers=(
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
-    ],
+    ),
     python_requires=">=3.6",
 )
