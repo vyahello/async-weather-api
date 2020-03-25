@@ -3,7 +3,6 @@
 [![Checked with mypy](http://www.mypy-lang.org/static/mypy_badge.svg)](http://mypy-lang.org/)
 [![PyPI version shields.io](https://img.shields.io/pypi/v/async-weather-api.svg)](https://pypi.python.org/pypi/async-weather-api/)
 [![PyPI pyversions](https://img.shields.io/pypi/pyversions/async-weather-api.svg)](https://pypi.python.org/pypi/async-weather-api/)
-
 [![Build Status](https://travis-ci.org/vyahello/async-weather-api.svg?branch=master)](https://travis-ci.org/vyahello/async-weather-api)
 [![Coverage Status](https://coveralls.io/repos/github/vyahello/async-weather-api/badge.svg?branch=master)](https://coveralls.io/github/vyahello/async-weather-api?branch=master)
 [![Forks](https://img.shields.io/github/forks/vyahello/async-weather-api)](https://github.com/vyahello/async-weather-api/network/members)
@@ -32,7 +31,7 @@
 
 ## Usage
 
-### PYPI
+### Quick start
 
 Please run following script to obtain latest package from PYPI:
 ```bash
