@@ -15,7 +15,8 @@
 
 # Async weather API
 > This project represents sample of asynchronous weather REST API that is build using **quart** (flask compatible API) python web microframework based on Asyncio.
-
+>
+> It uses https://openweathermap.org to obtain weather data.
 
 ## Tools
 - python 3.6 | 3.7 | 3.8
@@ -46,14 +47,20 @@ weather.run(key="your-secret-key", bind="0.0.0.0:5001", debug=False)
 Running on https://0.0.0.0:5001 (CTRL + C to quit)
 ...
 ```
-> Note `key` stands for API key from https://openweathermap.org
+> Note: `key` stands for API key from https://openweathermap.org
 
 ### Docker image
 
 Please run next command to start async weather api via docker:
 ```bash
-docker run -it -p 3000:5001 vyahello/async-weather-api:0.5.0 weather run --bind 0.0.0.0:5001 --mode prod --key <secret-key>
+docker run -it -p 3000:5001 vyahello/async-weather-api:0.5.0 \
+  weather run \
+  --bind 0.0.0.0:5001 \
+  --mode prod \
+  --key <secret-key>
 ```
+
+> Note: please use `3000` port to access application via docker
 
 ### Source code
 

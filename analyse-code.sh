@@ -39,7 +39,7 @@ check-pydocstyle() {
 
 
 check-unittests() {
-    --check-box "unitests" && pytest
+    --check-box "unitests" && pytest -m "unit or async_"
 }
 
 
