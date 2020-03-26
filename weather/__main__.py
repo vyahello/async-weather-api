@@ -1,21 +1,14 @@
 from argparse import ArgumentParser, ArgumentDefaultsHelpFormatter, _SubParsersAction
 from typing import Dict, NamedTuple, Any
-from weather import application
+from weather import Bind, application
 from weather.config import settings
 from weather.services.weather import global_init
-
-
-class _Bind(NamedTuple):
-    """Returns bind list of user's arguments."""
-
-    host: str
-    port: str
 
 
 class _Arguments(NamedTuple):
     """Returns human-readable list of user's arguments."""
 
-    bind: _Bind
+    bind: Bind
     debug: bool
     key: str
     mode: str
@@ -60,7 +53,7 @@ def _arguments() -> _Arguments:
     if not command_line_input:
         analytics_parser.print_help()
         analytics_parser.exit(1)
-    command_line_input["bind"] = _Bind(*command_line_input["bind"].split(":"))
+    command_line_input["bind"] = Bind(*command_line_input["bind"].split(":"))
     return _Arguments(**command_line_input)
 
 
