@@ -1,9 +1,10 @@
 from urequest.session import Session
 from urequest.url import HttpUrl
-from tests.markers import smoke, async_
+from tests.markers import smoke
+from weather import Bind
 
-pytestmark = [smoke, async_]
+pytestmark = smoke
 
 
-def test_index(http_session: Session) -> None:
-    assert http_session.get(url=HttpUrl("0.0.0.0:5000", "/index"))
+def test_index(http_session: Session, bind: Bind) -> None:
+    assert http_session.get(url=HttpUrl(str(bind), "/index"))

@@ -28,7 +28,7 @@ def bind() -> Bind:
     yield Bind()
 
 
-@pytest.fixture
+@pytest.fixture(scope="session")
 def startup_app(bind: Bind, weather_key: str) -> None:
     """Runs application."""
     run(weather_key, bind, debug=True)
