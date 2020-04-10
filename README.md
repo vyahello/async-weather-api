@@ -3,6 +3,7 @@
 [![Checked with mypy](http://www.mypy-lang.org/static/mypy_badge.svg)](http://mypy-lang.org/)
 [![PyPI version shields.io](https://img.shields.io/pypi/v/async-weather-api.svg)](https://pypi.python.org/pypi/async-weather-api/)
 [![PyPI pyversions](https://img.shields.io/pypi/pyversions/async-weather-api.svg)](https://pypi.python.org/pypi/async-weather-api/)
+[![Downloads](https://pepy.tech/badge/sync-weather-api)](https://pepy.tech/project/sync-weather-api)
 [![Build Status](https://travis-ci.org/vyahello/async-weather-api.svg?branch=master)](https://travis-ci.org/vyahello/async-weather-api)
 [![Coverage Status](https://coveralls.io/repos/github/vyahello/async-weather-api/badge.svg?branch=master)](https://coveralls.io/github/vyahello/async-weather-api?branch=master)
 [![Forks](https://img.shields.io/github/forks/vyahello/async-weather-api)](https://github.com/vyahello/async-weather-api/network/members)
@@ -36,7 +37,7 @@
 
 Please run following script to obtain latest package from PYPI:
 ```bash
-➜ pip install async-weather-api
+pip install async-weather-api
 ```
 
 Then please execute instructions below to launch game from your environment:
@@ -44,8 +45,6 @@ Then please execute instructions below to launch game from your environment:
 import weather
 
 weather.run(key="your-secret-key", bind="0.0.0.0:5001", debug=False)
-Running on https://0.0.0.0:5001 (CTRL + C to quit)
-...
 ```
 > Note: `key` stands for API key from https://openweathermap.org
 
@@ -66,21 +65,19 @@ docker run -it -p 3000:5001 vyahello/async-weather-api:0.5.0 \
 
 To be able to run source code please execute command below:
 ```bash
-➜ python -m weather run --bind 0.0.0.0:5001 --mode prod --key your-secret-key
-Running on https://0.0.0.0:5001 (CTRL + C to quit)
-...
+python -m weather run --bind 0.0.0.0:5001 --mode prod --key your-secret-key
 ```
 
 ### Endpoints
 - **/** - home page
   ```bash
-  ➜  curl -X GET http://0.0.0.0:5001/ 
-  ➜  curl -X GET http://0.0.0.0:5001/index 
+  curl -X GET http://0.0.0.0:5001/ 
+  curl -X GET http://0.0.0.0:5001/index 
   ```
   **Response**: html page
 - **/api/weather/{city}/{state}/{country}** - current weather event
     ```bash
-  ➜  curl -X GET http://0.0.0.0:5001/api/events/London/GB/GreatBritain
+  curl -X GET http://0.0.0.0:5001/api/events/London/GB/GreatBritain
   ```
   **Response**: json object
   ```json
@@ -88,7 +85,7 @@ Running on https://0.0.0.0:5001 (CTRL + C to quit)
   ```
 - **/api/weather/{zip_code}/{country}** - current weather in city
   ```bash
-  ➜  curl -X GET http://0.0.0.0:5001/api/weather/97002/us
+  curl -X GET http://0.0.0.0:5001/api/weather/97002/us
   ```
   **Response**: json object
   ```json
@@ -97,7 +94,7 @@ Running on https://0.0.0.0:5001 (CTRL + C to quit)
   ```
 - **/api/sun/{zip_code}/{country}** - current sunset/sunrise in city
   ```bash
-  ➜  curl -X GET http://0.0.0.0:5001/sun/weather/97002/us
+  curl -X GET http://0.0.0.0:5001/sun/weather/97002/us
   ```
   **Response**: json object
   ```json
@@ -114,7 +111,7 @@ after every made change to the repository.
 
 To be able to run code analysis, please execute command below:
 ```bash
-➜ ./analyse-code.sh
+./analyse-code.sh
 ```
 Also `test-report.html` will be generated after unittests execution.
 
@@ -139,7 +136,7 @@ Other than that, a fresh versioned package will be delivered on PYPI after new t
 
 ### Meta
 
-Author – Volodymyr Yahello
+Author – _Volodymyr Yahello_
 
 Distributed under the `MIT` license. See [LICENSE](LICENSE.md) for more information.
 
