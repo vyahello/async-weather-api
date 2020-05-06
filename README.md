@@ -40,7 +40,7 @@ Please run following script to obtain latest package from PYPI:
 pip install async-weather-api
 ```
 
-Then please execute instructions below to launch game from your environment:
+Then please execute steps below to launch API from your environment:
 ```python
 import weather
 
@@ -74,29 +74,32 @@ python -m weather run --bind 0.0.0.0:5001 --mode prod --key your-secret-key
   curl -X GET http://0.0.0.0:5001/ 
   curl -X GET http://0.0.0.0:5001/index 
   ```
-  **Response**: html page
+  _Response_: html page
+  
 - **/api/weather/{city}/{state}/{country}** - current weather event
-    ```bash
+  ```bash
   curl -X GET http://0.0.0.0:5001/api/events/London/GB/GreatBritain
   ```
-  **Response**: json object
+  _Response_: json object
   ```json
   {"city":"London","country":"GreatBritain","name":"Jeff the player","state":"GB"}
   ```
+  
 - **/api/weather/{zip_code}/{country}** - current weather in city
   ```bash
   curl -X GET http://0.0.0.0:5001/api/weather/97002/us
   ```
-  **Response**: json object
+  _Response_: json object
   ```json
   {"base":"stations","clouds":{"all":90},"cod":200,"coord":{"lat":45.23,"lon":-122.8},
   ...}
   ```
+  
 - **/api/sun/{zip_code}/{country}** - current sunset/sunrise in city
   ```bash
   curl -X GET http://0.0.0.0:5001/sun/weather/97002/us
   ```
-  **Response**: json object
+  _Response_: json object
   ```json
   {"astronomical_twilight_begin":"04:03:49 PM","astronomical_twilight_end":"04:29:50 AM",
   ...}
