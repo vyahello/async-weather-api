@@ -1,6 +1,8 @@
 import quart
 
-blueprint: quart.blueprints.Blueprint = quart.blueprints.Blueprint(__name__, __name__)
+blueprint: quart.blueprints.Blueprint = quart.blueprints.Blueprint(
+    __name__, __name__
+)
 
 
 @blueprint.route("/")

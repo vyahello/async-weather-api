@@ -2,7 +2,9 @@ from typing import Dict, Any
 import quart
 from weather.services import sun, location, weather
 
-blueprint: quart.blueprints.Blueprint = quart.blueprints.Blueprint(__name__, __name__)
+blueprint: quart.blueprints.Blueprint = quart.blueprints.Blueprint(
+    __name__, __name__
+)
 
 
 @blueprint.route("/api/events/<city>/<state>/<country>", methods=["GET"])

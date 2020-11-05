@@ -45,7 +45,12 @@ check-unittests() {
 
 main() {
     remove-pycache
-    check-black && check-flake && check-pylint && check-mypy && check-pydocstyle && check-unittests
+    check-black && \
+    check-flake && \
+    check-pylint && \
+    check-mypy && \
+    check-pydocstyle && \
+    check-unittests
 }
 
 

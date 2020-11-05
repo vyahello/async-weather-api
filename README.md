@@ -19,7 +19,7 @@
 ## Tools
 
 ### Production
-- python 3.6 | 3.7 | 3.8
+- python 3.6, 3.7, 3.8
 - [asyncio](https://docs.python.org/3/library/asyncio.html)
 - [quart](https://pgjones.gitlab.io/quart/)
 
@@ -35,7 +35,7 @@
 
 ### Quick start
 
-Please run following script to obtain latest package from PYPI:
+Please run following script to obtain the latest package from PYPI:
 ```bash
 pip install async-weather-api
 ```
@@ -123,7 +123,7 @@ Please check [changelog](CHANGELOG.md) file to get more details about actual ver
 
 ### Meta
 
-Author – _Volodymyr Yahello_. Please check [AUTHORS](AUTHORS.md) file for all contributors.
+Author – _Volodymyr Yahello_.
 
 Distributed under the `MIT` license. See [LICENSE](LICENSE.md) for more information.
 

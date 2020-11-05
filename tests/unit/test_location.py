@@ -1,7 +1,4 @@
-from tests.markers import unit, async_
 from weather.services.location import lat_long
-
-pytestmark = [unit, async_]
 
 
 async def test_lat_long() -> None:

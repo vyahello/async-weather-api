@@ -7,11 +7,17 @@ pytestmark = unit
 
 
 def test_absolute_path() -> None:
-    assert _absolute_filepath("fake", "txt") == os.path.abspath("weather/config/fake.txt")
+    assert _absolute_filepath("fake", "txt") == os.path.abspath(
+        "weather/config/fake.txt"
+    )
 
 
 @parametrize(
-    "mode, result", (("dev", {"dev": True, "weather_key": ""}), ("prod", {"dev": False, "weather_key": ""}))
+    "mode, result",
+    (
+        ("dev", {"dev": True, "weather_key": ""}),
+        ("prod", {"dev": False, "weather_key": ""}),
+    ),
 )
 def test_load(mode: str, result: dict) -> None:
     assert load(mode) == result

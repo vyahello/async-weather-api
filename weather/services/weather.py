@@ -11,8 +11,12 @@ def global_init(api_key: str) -> None:
 
     if not _KEY:
         print("Warning: No weather API key.")
-        print("If you want the weather part of the API to work, please get your own API key (free).")
-        print("It's available at https://api.openweathermap.org -- just sign up.")
+        print(
+            "If you want the weather part of the API to work, please get your own API key (free)."
+        )
+        print(
+            "It's available at https://api.openweathermap.org -- just sign up."
+        )
         print()
 
 
