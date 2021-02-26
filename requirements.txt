@@ -1,5 +1,5 @@
 quart==0.6.15
-aiohttp==3.6.2
+aiohttp==3.7.4
 aiodns==2.0.0
 cchardet==2.1.5
 setuptools==42.0.2
