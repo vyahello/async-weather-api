@@ -6,7 +6,7 @@
 [![PyPI version shields.io](https://img.shields.io/pypi/v/async-weather-api.svg)](https://pypi.python.org/pypi/async-weather-api/)
 [![PyPI pyversions](https://img.shields.io/pypi/pyversions/async-weather-api.svg)](https://pypi.python.org/pypi/async-weather-api/)
 [![Downloads](https://pepy.tech/badge/async-weather-api)](https://pepy.tech/project/async-weather-api)
-[![Build Status](https://travis-ci.org/vyahello/async-weather-api.svg?branch=master)](https://travis-ci.org/vyahello/async-weather-api)
+[![Build Status](https://www.travis-ci.com/vyahello/async-weather-api.svg?branch=master)](https://travis-ci.org/vyahello/async-weather-api)
 [![Coverage Status](https://coveralls.io/repos/github/vyahello/async-weather-api/badge.svg?branch=master)](https://coveralls.io/github/vyahello/async-weather-api?branch=master)
 [![Docker pulls](https://img.shields.io/docker/pulls/vyahello/async-weather-api.svg)](https://hub.docker.com/repository/docker/vyahello/async-weather-api)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE.md)
