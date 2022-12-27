@@ -2,7 +2,7 @@ quart==0.6.15
 aiohttp==3.7.4
 aiodns==2.0.0
 cchardet==2.1.5
-setuptools==42.0.2
+setuptools==65.5.1
 wheel==0.33.6
 twine==3.1.1
 urequest==0.0.2
